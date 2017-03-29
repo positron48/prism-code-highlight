@@ -22,7 +22,7 @@ class GoogleTagManagerExtension extends SimpleExtension
 
         $assets = array();
 
-        if ($config['containerid']) {
+        if ($config['containerid'] != '') {
             $asset = new Snippet();
             $asset->setCallback([$this, 'insertAnalyticsInHead'])
                 ->setLocation(Target::BEFORE_HEAD_META)
@@ -44,7 +44,7 @@ class GoogleTagManagerExtension extends SimpleExtension
     /**
      * @return string
      */
-    public function insertAnalyticsInHead()
+    protected function insertAnalyticsInHead()
     {
         $config = $this->getConfig();
         $variables = array('containerid' => $config['containerid']);
@@ -55,11 +55,21 @@ class GoogleTagManagerExtension extends SimpleExtension
     /**
      * @return string
      */
-    public function insertAnalyticsInBody()
+    protected function insertAnalyticsInBody()
     {
         $config = $this->getConfig();
         $variables = array('containerid' => $config['containerid']);
 
         return $this->renderTemplate('body.twig', $variables);
+    }
+
+    /**
+     * @return array
+     */
+    protected function getDefaultConfig()
+    {
+        return [
+            'containerid' => ''
+        ];
     }
 }
