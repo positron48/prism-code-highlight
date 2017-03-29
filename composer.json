@@ -15,8 +15,6 @@
             "email": "stevenknibbs@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Bolt\\Extension\\StevenKnibbs\\GoogleTagManager\\": "src"
