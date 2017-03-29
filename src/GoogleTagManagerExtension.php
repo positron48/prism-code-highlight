@@ -44,7 +44,7 @@ class GoogleTagManagerExtension extends SimpleExtension
     /**
      * @return string
      */
-    protected function insertAnalyticsInHead()
+    public function insertAnalyticsInHead()
     {
         $config = $this->getConfig();
         $variables = array('containerid' => $config['containerid']);
@@ -55,7 +55,7 @@ class GoogleTagManagerExtension extends SimpleExtension
     /**
      * @return string
      */
-    protected function insertAnalyticsInBody()
+    public function insertAnalyticsInBody()
     {
         $config = $this->getConfig();
         $variables = array('containerid' => $config['containerid']);
