@@ -9,7 +9,7 @@ use Bolt\Extension\SimpleExtension;
 /**
  * Google Tag Manager extension class.
  *
- * @author Steven Knibbs <steven.knibbs@gmail.com>
+ * @author Steven Knibbs <stevenknibbs@gmail.com>
  */
 class GoogleTagManagerExtension extends SimpleExtension
 {
@@ -44,7 +44,7 @@ class GoogleTagManagerExtension extends SimpleExtension
     /**
      * @return string
      */
-    public function insertAnalyticsInHead($config)
+    public function insertAnalyticsInHead()
     {
         $config = $this->getConfig();
         $variables = array('containerid' => $config['containerid']);
@@ -55,7 +55,7 @@ class GoogleTagManagerExtension extends SimpleExtension
     /**
      * @return string
      */
-    public function insertAnalyticsInBody($containerid)
+    public function insertAnalyticsInBody()
     {
         $config = $this->getConfig();
         $variables = array('containerid' => $config['containerid']);

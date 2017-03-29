@@ -6,14 +6,14 @@ use Bolt\Extension\StevenKnibbs\GoogleTagManager\GoogleTagManagerExtension;
 use Bolt\Tests\BoltUnitTest;
 
 /**
- * This test ensures the TagManager Loads correctly.
- *
- **/
-
+ * Class GoogleTagManagerTest
+ * @package Bolt\Extension\StevenKnibbs\GoogleTagManager\Tests
+ * @author Steven Knibbs <stevenknibbs@gmail.com>
+ */
 class GoogleTagManagerTest extends BoltUnitTest
 {
     /**
-     *
+     * Test the extension loads correctly.
      */
     public function testExtensionLoad()
     {
