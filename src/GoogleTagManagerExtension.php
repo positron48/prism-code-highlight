@@ -4,6 +4,7 @@ namespace Bolt\Extension\StevenKnibbs\GoogleTagManager;
 
 use Bolt\Asset\Snippet\Snippet;
 use Bolt\Asset\Target;
+use Bolt\Controller\Zone;
 use Bolt\Extension\SimpleExtension;
 
 /**
@@ -23,22 +24,48 @@ class GoogleTagManagerExtension extends SimpleExtension
         $assets = array();
 
         if ($config['containerid'] != '') {
-            $asset = new Snippet();
-            $asset->setCallback([$this, 'insertAnalyticsInHead'])
-                ->setLocation(Target::BEFORE_HEAD_META)
-                ->setPriority(99);
+            if ($config['zones']['frontend'] === true) {
+                $assets[] = $this->createHeadCallback(Zone::FRONTEND);
+                $assets[] = $this->createBodyCallback(Zone::FRONTEND);
+            }
 
-            $assets[] = $asset;
-
-            $asset = new Snippet();
-            $asset->setCallback([$this, 'insertAnalyticsInBody'])
-                ->setLocation(Target::START_OF_BODY)
-                ->setPriority(99);
-
-            $assets[] = $asset;
+            if ($config['zones']['backend'] === true) {
+                $assets[] = $this->createHeadCallback(Zone::BACKEND);
+                $assets[] = $this->createBodyCallback(Zone::BACKEND);
+            }
         }
 
         return $assets;
+    }
+
+    /**
+     * @param string $zone
+     * @return Snippet
+     */
+    private function createHeadCallback($zone)
+    {
+        $asset = new Snippet();
+        $asset->setCallback([$this, 'insertAnalyticsInHead'])
+            ->setLocation(Target::BEFORE_HEAD_META)
+            ->setPriority(99)
+            ->setZone($zone);
+
+        return $asset;
+    }
+
+    /**
+     * @param string $zone
+     * @return Snippet
+     */
+    private function createBodyCallback($zone)
+    {
+        $asset = new Snippet();
+        $asset->setCallback([$this, 'insertAnalyticsInBody'])
+            ->setLocation(Target::START_OF_BODY)
+            ->setPriority(99)
+            ->setZone($zone);
+
+        return $asset;
     }
 
     /**
@@ -69,7 +96,11 @@ class GoogleTagManagerExtension extends SimpleExtension
     protected function getDefaultConfig()
     {
         return [
-            'containerid' => ''
+            'containerid' => '',
+            'zones' => [
+                'frontend' => true,
+                'backend' => false
+            ]
         ];
     }
 }
