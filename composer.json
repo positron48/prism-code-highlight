@@ -4,7 +4,7 @@
     "type": "bolt-extension",
     "license": "MIT",
     "require": {
-        "bolt/bolt": "^3.0"
+        "bolt/core": "^4.0.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8 || ^5.7"
