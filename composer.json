@@ -3,30 +3,24 @@
     "description": "A Google Tag Manager extension for Bolt.",
     "type": "bolt-extension",
     "license": "MIT",
-    "require": {
-        "bolt/bolt": "^3.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^4.8 || ^5.7"
-    },
     "authors": [
         {
             "name": "Steven Knibbs",
             "email": "stevenknibbs@gmail.com"
         }
     ],
+    "require": {
+        "php": ">=7.1.3"
+    },
+    "require-dev": {
+        "bolt/core": "^4.0.0"
+    },
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\StevenKnibbs\\GoogleTagManager\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Bolt\\Extension\\StevenKnibbs\\GoogleTagManager\\Tests\\": "tests",
-            "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
+            "StevenKnibbs\\GoogleTagManager\\": "src/"
         }
     },
     "extra": {
-        "bolt-class": "Bolt\\Extension\\StevenKnibbs\\GoogleTagManager\\GoogleTagManagerExtension"
+        "entrypoint": "StevenKnibbs\\GoogleTagManager\\Extension"
     }
 }
