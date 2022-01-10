@@ -18,10 +18,9 @@ class Extension extends BaseExtension
     }
 
     /**
-     * Loads the Google Tag Manager Scripts.
+     * Loads the Prism script and styles.
      *
-     * Script comes in 2 parts - one goes in the <body> tag, the other goes
-     * in the <head>.
+     * styles in the <head> and script in the <body>.
      */
     public function initialize(): void
     {
