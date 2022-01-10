@@ -47,4 +47,4 @@ Enabled plugins:
 * toolbar
 * copy-to-clipboard
 
-You also can make your own build and rewrite css and js file `/assets/prism-code-highlight/` after installation of extension.
+You can also make your own build and rewrite css and js file at `/assets/prism-code-highlight/` after installation of extension.
