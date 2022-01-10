@@ -1,12 +1,12 @@
 {
-    "name": "stevenknibbs/googletagmanager",
-    "description": "A Google Tag Manager extension for Bolt.",
+    "name": "positron48/prism-code-highlight",
+    "description": "Prism syntax highliter extension for Bolt.",
     "type": "bolt-extension",
     "license": "MIT",
     "authors": [
         {
-            "name": "Steven Knibbs",
-            "email": "stevenknibbs@gmail.com"
+            "name": "Anton Filatov",
+            "email": "positron48@gmail.com"
         }
     ],
     "require": {
@@ -19,10 +19,10 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "StevenKnibbs\\GoogleTagManager\\": "src/"
+            "Positron48\\PrismCodeHighlight\\": "src/"
         }
     },
     "extra": {
-        "entrypoint": "StevenKnibbs\\GoogleTagManager\\Extension"
+        "entrypoint": "Positron48\\PrismCodeHighlight\\Extension"
     }
 }

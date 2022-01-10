@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StevenKnibbs\GoogleTagManager;
+namespace Positron48\PrismCodeHighlight;
 
 use Bolt\Widget\BaseWidget;
 use Bolt\Widget\Injector\AdditionalTarget;
@@ -12,14 +12,14 @@ use Bolt\Widget\TwigAwareInterface;
 /**
  * Adds Google Tag Manager script into top of the <body> tag.
  */
-class GoogleTagManagerBodyWidget extends BaseWidget implements TwigAwareInterface
+class PrismCodeHighlightBodyWidget extends BaseWidget implements TwigAwareInterface
 {
     use WidgetTrait;
 
-    protected $name = 'Google Tag Manager Body Widget';
-    protected $target = AdditionalTarget::START_OF_BODY;
+    protected $name = 'Prism Code Highlight Body Widget';
+    protected $target = AdditionalTarget::END_OF_BODY;
     protected $priority = 200;
-    protected $template = '@google-tag-manager-body-widget/body.twig';
+    protected $template = '@prism-code-highlight-body-widget/body.twig';
     protected $cacheDuration = 0;
 
     /**

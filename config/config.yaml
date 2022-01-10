@@ -1,7 +1,4 @@
-# The Container ID looks like 'GTM-XXXXX'.
-containerid:
-
-# Manages where Tag Manager script will be loaded.
+# Manages where Prism script will be loaded.
 zones:
   # Load on front end pages. Defaults to true.
   frontend: true

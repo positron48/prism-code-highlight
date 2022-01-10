@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StevenKnibbs\GoogleTagManager;
+namespace Positron48\PrismCodeHighlight;
 
 use Bolt\Extension\BaseExtension;
 
@@ -24,7 +24,7 @@ class Extension extends BaseExtension
      */
     public function initialize(): void
     {
-        $this->addWidget(new GoogleTagManagerHeadWidget());
-        $this->addWidget(new GoogleTagManagerBodyWidget());
+        $this->addWidget(new PrismCodeHighlightHeadWidget());
+        $this->addWidget(new PrismCodeHighlightBodyWidget());
     }
 }

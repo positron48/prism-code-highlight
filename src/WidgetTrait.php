@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StevenKnibbs\GoogleTagManager;
+namespace Positron48\PrismCodeHighlight;
 
 use Bolt\Widget\Injector\RequestZone;
 
@@ -62,14 +62,8 @@ trait WidgetTrait
      */
     private function build(): ?string
     {
-        $containerId = $this->getConfig('containerid');
-
-        if (empty($containerId)) {
-            return null;
-        }
-
         if ($this->isEnabled()) {
-            return parent::run(['containerid' => $containerId]);
+            return parent::run();
         }
 
         return null;

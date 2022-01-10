@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StevenKnibbs\GoogleTagManager;
+namespace Positron48\PrismCodeHighlight;
 
 use Bolt\Widget\BaseWidget;
 use Bolt\Widget\Injector\AdditionalTarget;
@@ -12,14 +12,14 @@ use Bolt\Widget\TwigAwareInterface;
 /**
  * Adds Google Tag Manager script into top of the <head> tag.
  */
-class GoogleTagManagerHeadWidget extends BaseWidget implements TwigAwareInterface
+class PrismCodeHighlightHeadWidget extends BaseWidget implements TwigAwareInterface
 {
     use WidgetTrait;
 
-    protected $name = 'Google Tag Manager Head Widget';
+    protected $name = 'Prism Code Highlight Head Widget';
     protected $target = AdditionalTarget::AFTER_HEAD_META;
     protected $priority = 200;
-    protected $template = '@google-tag-manager-head-widget/head.twig';
+    protected $template = '@prism-code-highlight-head-widget/head.twig';
     protected $cacheDuration = 0;
 
     /**
