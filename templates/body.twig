@@ -1,1 +1,5 @@
-<script src="{{ asset('assets/prism-code-highlight/prism.js', 'public') }}"></script>
+{% if zone == 'backend' %}
+    <script src="/assets/prism-code-highlight/prism.js"></script>
+{% else %}
+    <script src="{{ asset('assets/prism-code-highlight/prism.js', 'public') }}"></script>
+{% endif %}

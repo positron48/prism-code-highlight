@@ -9,6 +9,11 @@ use Bolt\Widget\Injector\RequestZone;
 trait WidgetTrait
 {
     /**
+     * @var string current zone (backend | frontend)
+     */
+    protected $currentZone;
+
+    /**
      * Gets an extension config value.
      *
      * @param string $key
@@ -49,6 +54,7 @@ trait WidgetTrait
             if (!RequestZone::is($request, $zone)) {
                 continue;
             }
+            $this->currentZone = $zone;
 
             // We're in the right zone and it's enabled in config.
             return true;
@@ -63,7 +69,7 @@ trait WidgetTrait
     private function build(): ?string
     {
         if ($this->isEnabled()) {
-            return parent::run();
+            return parent::run(['zone' => $this->currentZone]);
         }
 
         return null;
