@@ -50,7 +50,7 @@ Enabled plugins:
 ## Install 
 
 ```bash
-composer require 
+composer require positron48/prism-code-highlight
 ```
 
 Config is available on `config/extensions/positron48-prismcodehighlight.yaml`. 
